@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.mlec.repository.dao.MainBoardDAO">
+	
+	<!-- mainBoard 관련 -->
+	<select id="selectMainBoard" resultType="MainBoard">
+		select *
+		  from final_mainboard
+		 order by mainBoardNo desc
+	</select>
+	<select id="selectOneMainBoard" parameterType="int" resultType="MainBoard">
+		select *
+		  from final_mainboard
+		 where mainBoardNo = #{mainBoardNo} 
+	</select>
+	<insert id="insertMainBoard" parameterType="mainBoard">
+		insert into final_mainboard (
+			MainBoardTitle, userId, MainBoardContent
+		) values (
+			#{MainBoardTitle}, #{userId}, #{MainBoardContent}
+		)
+	</insert>
+	<update id="updateMainViewCnt" parameterType="int">
+		update final_mainboard
+		   set mainBoardViewCnt = mainBoardViewCnt + 1
+		 where mainBoardNo = #{mainBoardNo}
+	</update>
+	<update id="updateMainBoard" parameterType="mainBoard">
+		update final_mainboard
+		   set mainBoardTitle = #{mainBoardTitle}, 
+		       mainBoardContent = #{mainBoardContent}
+		 where no = #{no}
+	</update>
+	<delete id="deleteMainBoard" parameterType="int">
+		delete 
+		  from final_mainboard 
+		 where mainBoardNo = #{mainBoardNo}
+	</delete>
+	
+	<!-- 댓글 파트 ============================================= -->
+	<select id="selectMainComment" parameterType="int" resultType="MainComment">
+	    select *
+	      from final_maincomment
+	     where mainBoardNo = #{mainBoardNo}
+	     order by maincCommentNo
+	</select>	
+	
+	<insert id="insertMainComment" parameterType="MainComment">
+		insert into final_maincomment(
+			mainBoardNo, userId, mainCommentContent
+		) values (
+			#{mainBoardNo}, #{userId}, #{mainCommentContent}
+		)
+	</insert>	
+			
+	<delete id="deleteMainComment" parameterType="int">
+	    delete 
+	      from final_maincomment
+	     where MainCommentNo = #{MainCommentNo}
+	</delete>	
+	
+	<update id="updateMainComment" parameterType="MainComment">
+	    update final_mainComment
+	       set MainCommentContent = #{MainCommentContent}
+	     where MainCommentNo = #{MainCommentNo}
+	</update>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
