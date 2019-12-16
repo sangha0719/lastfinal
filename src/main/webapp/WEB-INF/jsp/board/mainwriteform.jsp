@@ -75,23 +75,23 @@
   <section id="about" class="about-section text-center">
     <div class="container">
       <h2>자유게시판</h2>
-	<form method='post' action='write.do'>
+	<form method='post' action='mainwrite.do'>
 	 	<div>
-  		   제목 : <input type='text' name='title' size='70' />	 	
+  		   제목 : <input type='text' name='mainBoardTitle' size='70' />	 	
 	 	</div>
 	 	<div>
 	 		<c:choose>
-	 			<c:when test="${empty member}">
-			 		글쓴이 : <input type="text" name="writer" />
+	 			<c:when test="${empty user}">
+			 		글쓴이 : <input type="text" name="userId" />
 	 			</c:when>
 	 			<c:otherwise>
-			 		<input type="hidden" name="writer" value="${member.id}" />
-				      글쓴이 : ${member.id}
+			 		<input type="hidden" name="userId" value="${user.id}" />
+				      글쓴이 : ${user.id}
 	 			</c:otherwise>
 		     </c:choose>
 	 	</div>
 	 	<div>
-	            내용 : <textarea name='content' rows='7' cols='70'></textarea>
+	            내용 : <textarea name='mainBoardContent' rows='7' cols='70'></textarea>
 	 	</div>
 	    <button type='submit'>등록</button>
 	</form>

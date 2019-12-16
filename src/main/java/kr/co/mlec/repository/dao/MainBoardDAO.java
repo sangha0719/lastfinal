@@ -20,8 +20,7 @@ public interface MainBoardDAO {
 	void updateComment(MainComment mainComment);
 	
 	/* 게시글 페이징 처리 ======================================= */
-//	List<MainBoard> reservationPaging(MainBoard mainBoard);
-//	int rsvCount(MainBoard mainBoard);
+	int mainBoardListPaging();
 }
 
 

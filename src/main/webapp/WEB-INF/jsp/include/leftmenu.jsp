@@ -16,7 +16,7 @@
 	</li>   
 	<li>                                 
 		<c:choose>
-		<c:when test="${empty member}">
+		<c:when test="${empty user}">
 			<a href="<c:url value="/login/loginform.do" />">
 				<i class="fa fa-user fa-lg"></i>
 				<span class="nav-text">Login</span>

@@ -20,7 +20,7 @@ import kr.co.mlec.repository.vo.MainComment;
 public class MainController {
 
 	@RequestMapping("/main.do")
-	public void main(@RequestParam(value="pageNo", defaultValue="1") int pageNo, Model model) {
+	public void main(@RequestParam(defaultValue="1") int curPage, Model model) {
 		model.addAttribute("list", service.listMainBoard());
 	}
 	
@@ -33,7 +33,7 @@ public class MainController {
 	@GetMapping("/board/mainwriteform.do")
 	public void mainWriteform() {}
 	
-	@PostMapping("/mainwrite.do")
+	@PostMapping("/board/mainwrite.do")
 	public String mainWrite(MainBoard mainBoard) {
 		service.insertMainBoard(mainBoard);
 		return "redirect:main.do";

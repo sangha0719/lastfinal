@@ -308,6 +308,7 @@
 			</div>
 		</div>
 	</div>
+	
       <div class="social d-flex justify-content-center">
         <a href="#" class="mx-2">
           <i class="fab fa-twitter"></i>

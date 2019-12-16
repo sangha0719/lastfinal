@@ -83,12 +83,12 @@
 	 	</div>
 	 	<div>
 	 		<c:choose>
-	 			<c:when test="${empty member}">
+	 			<c:when test="${empty user}">
 			 		글쓴이 : <input type="text" name="writer" />
 	 			</c:when>
 	 			<c:otherwise>
-			 		<input type="hidden" name="writer" value="${member.id}" />
-				      글쓴이 : ${member.id}
+			 		<input type="hidden" name="writer" value="${user.id}" />
+				      글쓴이 : ${user.id}
 	 			</c:otherwise>
 		     </c:choose>
 	 	</div>

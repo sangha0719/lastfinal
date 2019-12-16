@@ -45,22 +45,22 @@
           <button class="dark">Login</button>
         </div>
       </form>
-      <form id="register" tabindex="502">
+      <form id="register" tabindex="502" action="<c:url value='/login/regist.do'/>" method="POST">
         <h3>Register</h3>
         <div class="name">
-          <input type="text" name="">
+          <input type="text" name="userName">
           <label>Full Name</label>
         </div>
-        <div class="mail">
-          <input type="mail" name="">
-          <label>Mail</label>
-        </div>
+<!--         <div class="mail"> -->
+<!--           <input type="mail" name=""> -->
+<!--           <label>Mail</label> -->
+<!--         </div> -->
         <div class="uid">
-          <input type="text" name="">
+          <input type="text" name="userId">
           <label>User Name</label>
         </div>
         <div class="passwd">
-          <input type="password" name="">
+          <input type="password" name="userPassWord">
           <label>Password</label>
         </div>
         <div class="submit">

@@ -20,22 +20,22 @@ public class MainBoardServiceImpl implements MainBoardService {
 	public List<MainBoard> listMainBoard() {
 		return dao.selectMainBoard();
 	}
-	public MainBoard detailMainBoard(int no) {
-		dao.updateMainViewCnt(no);
-		return dao.selectOneMainBoard(no);
+	public MainBoard detailMainBoard(int mainBoardNo) {
+		dao.updateMainViewCnt(mainBoardNo);
+		return dao.selectOneMainBoard(mainBoardNo);
 	}
-	public MainBoard updateFormMainBoard(int no) {
-		return dao.selectOneMainBoard(no);
+	public MainBoard updateFormMainBoard(int mainBoardNo) {
+		return dao.selectOneMainBoard(mainBoardNo);
 	}
 	
-	public void deleteMainBoard(int no) {
-		dao.deleteMainBoard(no);
+	public void deleteMainBoard(int mainBoardNo) {
+		dao.deleteMainBoard(mainBoardNo);
 	}
-	public void insertMainBoard(MainBoard main) {
-		dao.insertMainBoard(main);
+	public void insertMainBoard(MainBoard mainBoard) {
+		dao.insertMainBoard(mainBoard);
 	}
-	public void updateMainBoard(MainBoard main) {
-		dao.updateMainBoard(main);
+	public void updateMainBoard(MainBoard mainBoard) {
+		dao.updateMainBoard(mainBoard);
 	}
 	public List<MainComment> mainCommentDelete(MainComment mainComment) {
 		dao.deleteComment(mainComment.getMainCommentNo());
@@ -54,7 +54,7 @@ public class MainBoardServiceImpl implements MainBoardService {
 	public List<MainComment> mainCommentList(int mainBoardNo) {
 		return dao.selectMainComment(mainBoardNo);
 	}
-
+	
 
 }
 

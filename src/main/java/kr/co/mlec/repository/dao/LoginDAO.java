@@ -1,7 +1,7 @@
 package kr.co.mlec.repository.dao;
 
-import kr.co.mlec.repository.vo.Member;
+import kr.co.mlec.repository.vo.User;
 
 public interface LoginDAO {
-	Member selectLogin(Member member);
+	User selectLogin(User user);
 }
