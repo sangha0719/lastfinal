@@ -5,11 +5,17 @@
 	
 	<insert id="register" parameterType="User">
 		insert into final_user (
-			userId, userName, userPassWord
+			userId, userName, userPassWord, userEmail
 		) values (
-			#{userId}, #{userName}, #{userPassWord}
+			#{userId}, #{userName}, #{userPassWord}, #{userEmail}
 		)
 	</insert>
+	
+	<select id="userIdCheck" parameterType="String" resultType="int">
+		select count(*)
+		  from final_user
+		 where userId = #{userId};
+	</select>
 	
 </mapper>
 

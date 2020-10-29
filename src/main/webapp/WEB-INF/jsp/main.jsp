@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Grayscale - Start Bootstrap Theme</title>
+  <title>OneShot - 시원하게 오늘도 한잔?</title>
   <!-- Bootstrap core CSS -->
   <link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css'/>" rel="stylesheet"/>
   <!-- Custom fonts for this template -->
@@ -63,7 +63,7 @@
             <a class="nav-link js-scroll-trigger" href="#projects">product introduction</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger active" href="#signup">Contact</a>
+            <a class="nav-link js-scroll-trigger active" href="#mainBoard">free board</a>
           </li>
         </ul>
       </div>
@@ -75,7 +75,18 @@
       <div class="mx-auto text-center">
         <h1 class="mx-auto my-0 text-uppercase" style="font-style: bold;">one shot?</h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-5">적적하고 심심한 그대들을 위한 단 하나의 사이트 How about a drink after work? </h2>
-        <a href="<c:url value='/login/loginform.do'/>" class="btn btn-primary js-scroll-trigger">Join Us</a>
+        <c:choose>
+	            <c:when test="${user.userNo == null}">
+	            	<a href="<c:url value='/login/loginform.do'/>" class="btn btn-primary js-scroll-trigger">
+	                	Join Us
+	            	</a>
+	            </c:when>
+	            <c:otherwise>
+	            	<a href="<c:url value='/login/logout.do'/>" class="btn btn-primary js-scroll-trigger">
+	                	로그아웃
+		            </a>
+	            </c:otherwise>
+            </c:choose>
       </div>
     </div>
   </header>
@@ -94,8 +105,6 @@
   </section>
   <!-- Projects Section -->
   <section id="projects" class="projects-section">
-  <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-  </div>
   <div class="border-0 m-5 p-5" >
     <div class="container">
       <div class="row px-0 p-0 m-0">
@@ -116,7 +125,7 @@
                               <h4 class="text-white px-2" style="font-family: gotham-bold;">횟집 </h4>
                               <p class="text-white-50 px-2 mt-5 mb-5" style="font-family: gotham-thin;">치아를 밀어내는 탱탱 식감의 회부터 <br> 사르륵 녹아드는 달달한 회까지 <br> 당신의 하루 마무리를 도와드립니다. </p>
                               <hr class="d-none d-lg-block mb-0 ml-0 border-0">
-                              <a style="float: right; margin-bottom: -200px;" class="btn btn-outline-light mt-5" href="#">둘러보기 <i class="fa fa-forward"></i></a>
+                              <a style="float: right; margin-bottom: -200px;" class="btn btn-outline-light mt-5" href="<c:url value='/snacks/shops.do'/>">둘러보기 <i class="fa fa-forward"></i></a>
                             </div>
                           </div>
                         </div>
@@ -136,7 +145,7 @@
                         <div class="bg-black text-center h-100 project w-100" style="	min-width: 500px;">
                           <div class="d-flex h-100 w-100" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;	min-height: 500px;">
                             <div class="project-text w-100 my-auto text-center text-lg-left h-100 m-0 p-0">
-                              <h4 class="text-white px-2" style="font-family: gotham-bold;">횟집 </h4>
+                              <h4 class="text-white px-2" style="font-family: gotham-bold;">횟집 1</h4>
                               <p class="text-white-50 px-2 mt-5 mb-5" style="font-family: gotham-thin;">치아를 밀어내는 탱탱 식감의 회부터 <br> 사르륵 녹아드는 달달한 회까지 <br> 당신의 하루 마무리를 도와드립니다. </p>
                               <hr class="d-none d-lg-block mb-0 ml-0 border-0">
                               <a style="float: right; margin-bottom: -200px;" class="btn btn-outline-light mt-5" href="#">둘러보기 <i class="fa fa-forward"></i></a>
@@ -159,7 +168,7 @@
                         <div class="bg-black text-center h-100 project w-100" style="	min-width: 500px;">
                           <div class="d-flex h-100 w-100" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;	min-height: 500px;">
                             <div class="project-text w-100 my-auto text-center text-lg-left h-100 m-0 p-0">
-                              <h4 class="text-white px-2" style="font-family: gotham-bold;">횟집 </h4>
+                              <h4 class="text-white px-2" style="font-family: gotham-bold;">족발 </h4>
                               <p class="text-white-50 px-2 mt-5 mb-5" style="font-family: gotham-thin;">치아를 밀어내는 탱탱 식감의 회부터 <br> 사르륵 녹아드는 달달한 회까지 <br> 당신의 하루 마무리를 도와드립니다. </p>
                               <hr class="d-none d-lg-block mb-0 ml-0 border-0">
                               <a style="float: right; margin-bottom: -200px;" class="btn btn-outline-light mt-5" href="#">둘러보기 <i class="fa fa-forward"></i></a>
@@ -187,8 +196,8 @@
                         <div class="bg-black text-center h-100 project w-100" style="	min-width: 500px;">
                           <div class="d-flex h-100 w-100" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;	min-height: 500px;">
                             <div class="project-text w-100 my-auto text-center text-lg-left h-100 m-0 p-0">
-                              <h4 class="text-white text-right px-2" style="font-family: gotham-bold;">횟집 </h4>
-                              <p class="text-white-50 text-right px-2 mt-5 mb-5" style="font-family: gotham-thin;">치아를 밀어내는 탱탱 식감의 회부터 <br> 사르륵 녹아드는 달달한 회까지 <br> 당신의 하루 마무리를 도와드립니다. </p>
+                              <h4 class="text-white text-right px-2" style="font-family: gotham-bold;">전 </h4>
+                              <p class="text-white-50 text-right px-2 mt-5 mb-5" style="font-family: gotham-thin;">녹지~~인한 전과 함께<br> 달달한 막걸리까지 쭈~욱!<br> 고생한 오늘의 나를 위해 한잔!? </p>
                               <hr class="d-none d-lg-block mb-0 ml-0 border-0">
                               <a style="float: left; margin-bottom: -200px;" class="btn btn-outline-light mt-5" href="#"><i class="fa fa-backward"></i> 둘러보기</a>
                             </div>
@@ -210,8 +219,8 @@
                         <div class="bg-black text-center h-100 project w-100" style="	min-width: 500px;">
                           <div class="d-flex h-100 w-100" style="	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));	background-position: top left;	background-size: 100%;	background-repeat: repeat;	min-height: 500px;">
                             <div class="project-text w-100 my-auto text-center text-lg-left h-100 m-0 p-0">
-                              <h4 class="text-white text-right px-2" style="font-family: gotham-bold;">횟집 </h4>
-                              <p class="text-white-50 text-right px-2 mt-5 mb-5" style="font-family: gotham-thin;">치아를 밀어내는 탱탱 식감의 회부터 <br> 사르륵 녹아드는 달달한 회까지 <br> 당신의 하루 마무리를 도와드립니다. </p>
+                              <h4 class="text-white text-right px-2" style="font-family: gotham-bold;">곱창 </h4>
+                              <p class="text-white-50 text-right px-2 mt-5 mb-5" style="font-family: gotham-thin;">쫄깃함 속에 고속 곱들이 쏙쏙!!!<br> 달달씁씁한 소주와 함께<br> 원기회복 한방!!!! </p>
                               <hr class="d-none d-lg-block mb-0 ml-0 border-0">
                               <a style="float: left; margin-bottom: -200px;" class="btn btn-outline-light mt-5" href="#"><i class="fa fa-backward"></i> 둘러보기</a>
                             </div>
@@ -262,7 +271,7 @@
         <div class="col-md-10 col-lg-8 mx-auto text-center">
           <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
           <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-          <form class="form-inline d-flex">
+          <form class="form-inline d-flex" action="<c:url value='email/send.do'/>">
             <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
             <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
           </form>
@@ -271,11 +280,11 @@
     </div>
   </section>
   <!-- MainBoard Section -->
-  <section class="contact-section bg-black">
+  <section class="contact-section bg-black" id="mainBoard">
     <div class="container">
 		<h2 style="color:aliceblue">자유게시판</h2>
 		<div>
-			<div style="color:aliceblue">전체 : ${list.size()}개</div>
+			<div style="color:aliceblue">전체 : ${listCnt}개</div>
 			<table class="table table-bordered">
 				<thead>
 				<tr id="mainboard">
@@ -283,6 +292,7 @@
 					<th>제목</th>
 					<th>글쓴이</th>
 					<th>조회수</th>
+<!-- 					<th>관심사</th> -->
 					<th>등록일</th>
 				</tr>
 				</thead>
@@ -295,9 +305,10 @@
 				<c:forEach var="mainB" items="${list}">
 				<tr>
 					<td>${mainB.mainBoardNo}</td>
-					<td><a href="detail.do?no=${mainB.mainBoardNo}">${mainB.mainBoardTitle}</a></td>
+					<td><a href="board/maindetail.do?mainBoardNo=${mainB.mainBoardNo}">${mainB.mainBoardTitle}</a></td>
 					<td>${mainB.userId}</td>
 					<td>${mainB.mainBoardViewCnt}</td>
+<%-- 					<td>${mainB.mainBoardHobby}</td> --%>
 					<td><fmt:formatDate pattern="yyyy-MM-dd" value="${mainB.mainBoardRegDate}" /></td>
 				</tr>
 				</c:forEach>
@@ -306,6 +317,49 @@
 			<div>
 				<a href="<c:url value='/board/mainwriteform.do'/>">글쓰기</a>
 			</div>
+<!-- 			페이지 처리 관련 -->
+			<div id="paginationBox">
+		<ul class="pagination" id="pagination">
+		
+			<c:if test="${pagination.prev}">
+				<li class="page-item">
+				<a class="page-link" href="#" onClick="prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">
+				Previous</a>
+				</li>
+			</c:if>
+			
+			<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
+				<li class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> ">
+				<a class="page-link" href="#" onClick="pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')">
+				 ${idx} </a>
+				 </li>
+			</c:forEach>
+			
+			<c:if test="${pagination.next}">
+				<li class="page-item">
+				<a class="page-link" href="#" onClick="next('${pagination.range}','${pagination.range}', '${pagination.rangeSize}')" >
+				Next</a>
+				</li>
+			</c:if>
+			
+		</ul>
+	</div>
+	<!-- 검색 관련 -->
+	<div class="form-group row justify-content-center">
+			<div class="w100" style="padding-right:10px">
+				<select class="form-control form-control-sm" name="searchType" id="searchType">
+					<option value="title">제목</option>
+					<option value="Content">본문</option>
+					<option value="reg_id">작성자</option>
+				</select>
+			</div>
+			<div class="w300" style="padding-right:10px">
+				<input type="text" class="form-control form-control-sm" name="keyword" id="keyword">
+			</div>
+			<div>
+				<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch" style="height:10px; line-height:0; padding:1rem;">검색</button>
+			</div>
+		</div>
 		</div>
 	</div>
 	
@@ -332,6 +386,10 @@
   <script src="<c:url value='/resources/vendor/jquery-easing/jquery.easing.min.js'/>"></script>
   <!-- Custom scripts for this template -->
   <script src="<c:url value='/resources/js/grayscale.min.js'/>"></script>
+  <!-- 페이징 처리 js -->
+  <script src="<c:url value='/resources/js/paging.js'/>"></script>
+  <!-- 검색 관련 js -->
+  <script src="<c:url value='/resources/js/search.js'/>"></script>
 </body>
 
 </html>

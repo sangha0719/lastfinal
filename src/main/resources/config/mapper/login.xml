@@ -5,8 +5,8 @@
 	<select id="selectLogin" parameterType="User" resultType="User">
 		select *
 		  from final_user
-		 where id = #{id}
-		   and pass = #{pass} 
+		 where userId = #{userId}
+		   and userPassWord = #{userPassWord} 
 	</select>
 </mapper>
 

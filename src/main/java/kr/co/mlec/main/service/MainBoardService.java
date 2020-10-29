@@ -2,13 +2,14 @@ package kr.co.mlec.main.service;
 
 import java.util.List;
 
+import kr.co.mlec.main.pagination.Search;
 import kr.co.mlec.repository.vo.MainBoard;
 import kr.co.mlec.repository.vo.MainComment;
 
 
 public interface MainBoardService {
 	
-	List<MainBoard> listMainBoard();
+	List<MainBoard> listMainBoard(Search search);
 	MainBoard detailMainBoard(int mainBoardNo);
 	MainBoard updateFormMainBoard(int mainBoardNo);
 	void deleteMainBoard(int mainBoardNo);
@@ -22,6 +23,7 @@ public interface MainBoardService {
 	List<MainComment> mainCommentUpdate(MainComment mainComment);
 	List<MainComment> mainCommentList(int mainCommentNo);
 	
-
+// 페이징 처리 파트
+	public int mainBoardListCnt(Search search) throws Exception;
 }
 

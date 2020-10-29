@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import kr.co.mlec.main.pagination.Search;
 import kr.co.mlec.repository.dao.MainBoardDAO;
 import kr.co.mlec.repository.vo.MainBoard;
 import kr.co.mlec.repository.vo.MainComment;
@@ -17,8 +18,8 @@ public class MainBoardServiceImpl implements MainBoardService {
 	@Autowired
 	private MainBoardDAO dao;
 	
-	public List<MainBoard> listMainBoard() {
-		return dao.selectMainBoard();
+	public List<MainBoard> listMainBoard(Search search) {
+		return dao.selectMainBoard(search);
 	}
 	public MainBoard detailMainBoard(int mainBoardNo) {
 		dao.updateMainViewCnt(mainBoardNo);
@@ -55,6 +56,13 @@ public class MainBoardServiceImpl implements MainBoardService {
 		return dao.selectMainComment(mainBoardNo);
 	}
 	
+	
+	// 페이징 관련 처리
+	// 총 게시글 개수 확인
+	@Override
+	public int mainBoardListCnt(Search search) throws Exception {
+		return dao.mainBoardListCnt(search);
+	}
 
 }
 

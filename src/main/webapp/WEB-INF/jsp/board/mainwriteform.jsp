@@ -41,7 +41,6 @@
 </head>
 
 <body id="page-top">
-    <c:import url="/WEB-INF/jsp/include/leftmenu.jsp" />
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container">
@@ -63,34 +62,27 @@
       </div>
     </div>
   </nav>
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase" style="font-style: bold;">one shot?</h1>
-      </div>
-    </div>
-  </header>
+  
   <!-- About Section -->
   <section id="about" class="about-section text-center">
     <div class="container">
-      <h2>자유게시판</h2>
+      <h2 style="color: white; text-align: center;">자유게시판</h2>
 	<form method='post' action='mainwrite.do'>
-	 	<div>
-  		   제목 : <input type='text' name='mainBoardTitle' size='70' />	 	
-	 	</div>
-	 	<div>
+	 	<div style="color: white; text-align: left;">
 	 		<c:choose>
 	 			<c:when test="${empty user}">
 			 		글쓴이 : <input type="text" name="userId" />
 	 			</c:when>
 	 			<c:otherwise>
-			 		<input type="hidden" name="userId" value="${user.id}" />
-				      글쓴이 : ${user.id}
+			 		<input type="hidden" name="userId" value="${user.userId}" />
+				      글쓴이 : ${user.userId}
 	 			</c:otherwise>
 		     </c:choose>
 	 	</div>
-	 	<div>
+	 	<div style="color: white; text-align: left;">
+  		   제목 : <input type='text' name='mainBoardTitle' size='70' />	 	
+	 	</div>
+	 	<div style="color: white; text-align: left;">
 	            내용 : <textarea name='mainBoardContent' rows='7' cols='70'></textarea>
 	 	</div>
 	    <button type='submit'>등록</button>

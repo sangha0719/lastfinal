@@ -74,11 +74,11 @@
 			padding-top: 20%;
       visibility: visible;
 		}
-		.veen .wrapper #register{
+		.veen .wrapper #regist{
 			transform: translateY(-80%) translateX(100%);
       visibility: hidden;
 		}
-		.veen .wrapper.move #register{
+		.veen .wrapper.move #regist{
 			transform: translateY(-80%) translateX(0%);
       visibility: visible;
 		}

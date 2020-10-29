@@ -1,5 +1,6 @@
 package kr.co.mlec.repository.vo;
 
+
 import lombok.Data;
 
 @Data
@@ -13,6 +14,7 @@ public class User {
 	private String userSex;
 	private String userBirthDay;
 	private int userNo;
+	private String userEmail;
 }
 
 

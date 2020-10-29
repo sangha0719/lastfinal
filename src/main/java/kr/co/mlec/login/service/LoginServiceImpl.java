@@ -13,8 +13,8 @@ public class LoginServiceImpl implements LoginService {
 	private LoginDAO dao;
 
 	@Override
-	public User login(User m) {
-		return dao.selectLogin(m);
+	public User login(User u) {
+		return dao.selectLogin(u);
 	}
 }
 
